@@ -29,6 +29,7 @@ namespace Thibodeau_Ashley_CE05
         {
             InitializeComponent();
             this.AllContacts = new ObservableCollection<ContactData>(Contacts.Get());
+
             collectionView.SelectionMode = SelectionMode.Multiple;
 
             this.deleteItem = new ToolbarItem

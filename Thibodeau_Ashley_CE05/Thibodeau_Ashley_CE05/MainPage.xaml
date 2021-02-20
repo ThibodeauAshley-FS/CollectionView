@@ -20,7 +20,7 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Margin="5" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" CornerRadius="10">
+                    <Frame Margin="5" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" CornerRadius="10" BorderColor="Black">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" Grid.ColumnSpan="2" />
@@ -28,10 +28,10 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <Image Source="{Binding PhotoURL}" HeightRequest="60" />
-                            <Label Text="{Binding FullName}" Grid.Column="1" VerticalTextAlignment="Center" />
-                            <Label Text="{Binding Email}" Grid.Row="1" VerticalTextAlignment="Center" Grid.ColumnSpan="2" />
-                            <Label Text="{Binding Phone}" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Center" Grid.ColumnSpan="2" />
+                            <Image Source="{Binding PhotoURL}" HeightRequest="60" Grid.ColumnSpan="3" HorizontalOptions="Center" />
+                            <Label Text="{Binding FullName}" VerticalTextAlignment="Center" Grid.Row="1" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding Email}" Grid.Row="3" VerticalTextAlignment="Center" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding Phone}" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Center" Grid.ColumnSpan="3" HorizontalTextAlignment="Center" />
                         </Grid>
                     </Frame>
                 </DataTemplate>
