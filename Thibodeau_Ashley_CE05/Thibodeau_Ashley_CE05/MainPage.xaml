@@ -1,24 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Ashley Thibodeau
+    Interface Programming
+    Code Exercise 05
+    C20210201
+
+    GitHub Link: https://github.com/InterfaceProgramming/ce5-ThibodeauAshley-FS
+-->
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Thibodeau_Ashley_CE05.MainPage">
-
+             x:Class="Thibodeau_Ashley_CE05.MainPage"
+             Title="All Contacts">
+             
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <CollectionView x:Name="collectionView">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Span="2" Orientation="Vertical" VerticalItemSpacing="10" HorizontalItemSpacing="20" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" Grid.ColumnSpan="2" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding PhotoURL}" HeightRequest="60" />
+                            <Label Text="{Binding FullName}" Grid.Column="1" VerticalTextAlignment="Center" />
+                            <Label Text="{Binding Email}" Grid.Row="1" VerticalTextAlignment="Center" Grid.ColumnSpan="2" />
+                            <Label Text="{Binding Phone}" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Center" Grid.ColumnSpan="2" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 
 </ContentPage>
